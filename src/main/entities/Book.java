@@ -1,6 +1,6 @@
 package main.entities;
 
-public class Book {
+public class Book implements Entity {
     private Integer id;
     private String name;
     private String publisher;

@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 
 import main.entities.dao.*;
 import main.entities.*;
+import main.enums.UserType;
 
 public class Main extends Application {
 
@@ -25,12 +26,20 @@ public class Main extends Application {
         BookDAO b = new BookDAO();
         Book newBook = new Book();
         newBook.setName("Test book");
-        b.saveNewBook(newBook);
+        // b.saveNew(newBook);
         // b.deleteBook(newBook);
 
-        Book savedBook = b.getBook(1);
-        savedBook.setName("edited!");
-        savedBook.setPublisher("Foobar");
-        b.updateBook(savedBook);
+        UserDAO u = new UserDAO();
+        User user = new User();
+        user.setName("Admin");
+        user.setPassword("12345");
+        user.setType(UserType.LIBRARIAN);
+        u.saveNew(user);
+
+
+//        Book savedBook = b.getBook(1);
+//        savedBook.setName("edited!");
+//        savedBook.setPublisher("Foobar");
+//        b.updateBook(savedBook);
     }
 }
